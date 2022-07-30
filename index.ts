@@ -25,7 +25,7 @@ export async function build() {
     files: {'bootstrap': new FileFsRef({ mode: 0o755, fsPath: '.build/release/MyLambda' })},
     // files: {'bootstrap': new FileFsRef({ mode: 0o755, fsPath: '.build/arm64-apple-macosx/debug/MyLambda' })},
     handler: 'bootstrap',
-    runtime: 'provided',
+    runtime: 'provided.al2',
   })
   return {
     output: lambda,

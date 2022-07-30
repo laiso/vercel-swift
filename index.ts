@@ -6,7 +6,8 @@ export const version = 3;
 export async function build() {
   console.log("vercel-swift Building...");
   await commandSync(
-      `curl https://download.swift.org/experimental-use-only/repo/amazonlinux/releases/2/swiftlang.repo > /etc/yum.repos.d/swiftlang.repo`
+      `curl https://download.swift.org/experimental-use-only/repo/amazonlinux/releases/2/swiftlang.repo -o /etc/yum.repos.d/swiftlang.repo`,
+      { shell: true, stdio: 'inherit' }
   );
   await commandSync(
       `amazon-linux-extras install epel`,

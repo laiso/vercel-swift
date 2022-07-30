@@ -18,7 +18,7 @@ export async function build() {
       { shell: true, stdio: 'inherit' }
   );
   await commandSync(
-      `swift build -c release`,
+      `swift build -c release -Xswiftc -static-stdlib`,
       { shell: true, stdio: 'inherit' }
   );
   const lambda = await createLambda({

@@ -9,7 +9,7 @@ async function build() {
     await (0, execa_1.commandSync)(`curl https://download.swift.org/experimental-use-only/repo/amazonlinux/releases/2/swiftlang.repo -o /etc/yum.repos.d/swiftlang.repo`, { shell: true, stdio: 'inherit' });
     await (0, execa_1.commandSync)(`amazon-linux-extras install epel`, { shell: true, stdio: 'inherit' });
     await (0, execa_1.commandSync)(`yum install swiftlang`, { shell: true, stdio: 'inherit' });
-    await (0, execa_1.commandSync)(`swift build -c release`, { shell: true, stdio: 'inherit' });
+    await (0, execa_1.commandSync)(`swift build -c release -Xswiftc -static-stdlib`, { shell: true, stdio: 'inherit' });
     const lambda = await (0, build_utils_1.createLambda)({
         files: { 'bootstrap': new build_utils_1.FileFsRef({ mode: 0o755, fsPath: '.build/release/MyLambda' }) },
         // files: {'bootstrap': new FileFsRef({ mode: 0o755, fsPath: '.build/arm64-apple-macosx/debug/MyLambda' })},

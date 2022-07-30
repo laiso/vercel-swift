@@ -2,8 +2,9 @@
   "name": "vercel-swift",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "laiso",
@@ -11,5 +12,9 @@
   "dependencies": {
     "@vercel/build-utils": "^5.0.6",
     "execa": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "typescript": "^4.7.4"
   }
 }

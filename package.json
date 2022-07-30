@@ -9,6 +9,7 @@
   "author": "laiso",
   "license": "MIT",
   "dependencies": {
-    "@vercel/build-utils": "^5.0.6"
+    "@vercel/build-utils": "^5.0.6",
+    "execa": "^6.1.0"
   }
 }
